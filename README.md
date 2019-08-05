@@ -54,7 +54,7 @@ Put the following into R
 module load languages/R-3.5.1-ATLAS-gcc-6.1
 
 library(ggplot2) 
-
+R
 q <- ggplot(data, aes(x=species, y=f, color=population))
 q1 <-q + geom_boxplot(position = position_dodge(0.8))
 q2 <- q1 + theme_classic()
