@@ -62,3 +62,42 @@ q2 <- q1 + theme_classic()
 q3 <- q2 + ggtitle(“Fstat in modern and museum populations, Triplet C“) + xlab(“Species”) + ylab(“f”)
 
 ```
+## PCA and Outliers
+# PCA
+Principle Component Analysis using PCAdapt in R.
+```
+module load languages/R-3.5-ATLAS-gcc-7.1.0
+R
+
+library(pcadapt)
+C3 <- read.pcadapt("C3.forpcadapt.ped", type="ped")
+```
+Establish number of pc's by producing a scree plot graph. When the graph plateaus, little to no variance is explained by the following factors.
+```
+x.C3 <- pcadapt(C3, K=20)
+pdf("C3.pcs.pdf")
+plot(x.C3, option="screeplot")
+dev.off()
+```
+see  https://cran.r-project.org/web/packages/pcadapt/vignettes/pcadapt.html  on choosing K.
+
+Plot the PCA using population information.
+```
+poplist <- read.table("C3.poplist.forpcadapt", sep="\t", header=F)
+colnames(poplist) <- c("sample", "pop")
+
+C3 <- read.pcadapt("C3.forpcadapt.plink.ped", type=ped)
+x.C3 <- pcadapt(C3, K=2)
+pdf("C3.pca.pdf")
+plot(x.C3, option='scores', pop=poplist)
+dev.off()
+```
+# Outliers
+
+```
+
+Put the following code into R.
+```
+R
+alpha <- 0.05
+qval <- qvalue(x.CHall.maf0.05$pvalues)$qvalues
