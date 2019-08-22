@@ -63,7 +63,7 @@ q3 <- q2 + ggtitle(“Fstat in modern and museum populations, Triplet C“) + xl
 
 ```
 ## PCA and Outliers
-# PCA
+### PCA
 Principle Component Analysis using PCAdapt in R.
 ```
 module load languages/R-3.5-ATLAS-gcc-7.1.0
@@ -92,7 +92,7 @@ pdf("C3.pca.pdf")
 plot(x.C3, option='scores', pop=poplist)
 dev.off()
 ```
-# Outliers
+### Outliers
 
 ```
 
