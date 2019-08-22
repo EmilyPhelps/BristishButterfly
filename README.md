@@ -70,34 +70,49 @@ module load languages/R-3.5-ATLAS-gcc-7.1.0
 R
 
 library(pcadapt)
-C3 <- read.pcadapt("C3.forpcadapt.ped", type="ped")
+C1 <- read.pcadapt("C3.forpcadapt.ped", type="ped")
 ```
 Establish number of pc's by producing a scree plot graph. When the graph plateaus, little to no variance is explained by the following factors.
 ```
-x.C3 <- pcadapt(C3, K=20)
-pdf("C3.pcs.pdf")
-plot(x.C3, option="screeplot")
+x.C1 <- pcadapt(C3, K=20)
+pdf("C1.pcs.pdf")
+plot(x.13, option="screeplot")
 dev.off()
 ```
 see  https://cran.r-project.org/web/packages/pcadapt/vignettes/pcadapt.html  on choosing K.
 
 Plot the PCA using population information.
 ```
-poplist <- read.table("C3.poplist.forpcadapt", sep="\t", header=F)
+poplist <- read.table("C1.poplist.forpcadapt", sep="\t", header=F)
 colnames(poplist) <- c("sample", "pop")
 
-C3 <- read.pcadapt("C3.forpcadapt.plink.ped", type=ped)
-x.C3 <- pcadapt(C3, K=2)
-pdf("C3.pca.pdf")
-plot(x.C3, option='scores', pop=poplist)
+C1 <- read.pcadapt("C1.forpcadapt.plink.ped", type=ped)
+x.C3 <- pcadapt(C1, K=2)
+pdf("C1.pca.pdf")
+plot(x.C1, option='scores', pop=poplist)
 dev.off()
 ```
 ### Outliers
-
+Identifying outliers and false discovery rate
 ```
-
-Put the following code into R.
+x.C1.maf0.05 <- pcadapt(C1, K=3, min.maf=0.05)
+x.C1.maf0.1 <- pcadapt(C1, K=3, min.maf=0.1)
 ```
-R
-alpha <- 0.05
-qval <- qvalue(x.CHall.maf0.05$pvalues)$qvalues
+Plot p-distribution value. 
+```
+pdf(file="C1.pcadapt.pvalues.pdf")
+par(mfrow=c(2,1))
+hist(x.C1.maf0.05$pvalues,xlab="p-values CHall maf0.05",main=NULL,breaks=50)
+hist(x.C1.maf0.1$pvalues,xlab="p-values CHall maf0.1",main=NULL,breaks=50)
+dev.off()
+```
+Choose the distribution that is flat. Document the p-value distributions in each case. Write the figure to pdf and upload to github.
+```
+library(qvalue)
+alpha <- 0.05  ##FDR
+qval <- qvalue(x.C1.maf0.05$pvalues)$qvalues
+outliers.C1 <- which(qval<alpha)
+outliers.C1
+C1.snp_pc <- get.pc(x.C1.maf0.05,outliers.C1)
+```
+Write the x.C1.maf0.* to a file (including locus name/index, and associated statistics and p-values). Also record the outliers.C1 file as well as the number of outliers. 
