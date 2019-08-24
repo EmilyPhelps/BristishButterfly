@@ -56,6 +56,7 @@ module load languages/R-3.5.1-ATLAS-gcc-6.1
 ```
 R
 library(ggplot2) 
+
 q <- ggplot(data, aes(x=species, y=f, color=population))
 q1 <-q + geom_boxplot(position = position_dodge(0.8))
 q2 <- q1 + theme_classic()
@@ -67,9 +68,11 @@ q3 <- q2 + ggtitle(“Fstat in modern and museum populations, Triplet C“) + xl
 Principle Component Analysis using PCAdapt in R.
 ```
 module load languages/R-3.5.1-ATLAS-gcc-6.1z
+
 R
 
 library(pcadapt)
+
 C1 <- read.pcadapt("C3.forpcadapt.ped", type="ped")
 ```
 Establish number of pc's by producing a scree plot graph. When the graph plateaus, little to no variance is explained by the following factors.
@@ -109,12 +112,32 @@ dev.off()
 Choose the distribution that is flat. Document the p-value distributions in each case. Write the figure to pdf and upload to github.
 ```
 library(qvalue)
+
 alpha <- 0.05  ##FDR
 qval <- qvalue(x.C1.maf0.05$pvalues)$qvalues
 outliers.C1 <- which(qval<alpha)
 outliers.C1
+
 C1.snp_pc <- get.pc(x.C1.maf0.05,outliers.C1)
 ```
 Write the x.C1.maf0.* to a file (including locus name/index, and associated statistics and p-values). Also record the outliers.C1 file as well as the number of outliers. 
+```
+write.table(outliers.C1, "outliers.C1", col.names=F, row.names=F, quote=F) 
+
+q()
+```
+Number of outliers
+```
+wc -l outliers.C1 #general outliers
+
+awk '$2 == 1' outliers.C1 > PC.1
+wc -l PC.1 #outliers associated with PC1
+
+awk '$2 == 2' outliers.C1 > PC.2
+wc -l PC.2 #outliers associated with PC2
+
+awk '$2 == 3' outliers.C1 > PC.3
+wc -l PC.3 #outliers associated with PC3
+```
 
 ### Outliers expanding populations
