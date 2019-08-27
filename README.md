@@ -65,6 +65,54 @@ q3 <- q2 + ggtitle(“Fstat in modern and museum populations, Triplet C“) + xl
 ```
 ## PCA and Outliers
 ### PCA
+First filter, merge and convert the isec VCF file. 
+
+This is for the museum and modern samples. For the expaninding samples see below.
+
+```
+module load apps/bcftools-1.8
+module load apps/vcftools-0.1.12b
+
+###merge the two bcf files in species/03_variants/filteredxxx/dir/
+
+bcftools view 0002.vcf -O b > 0002.bcf
+bcftools view 0003.vcf -O b > 0003.bcf
+bcftools index 0002.bcf
+bcftools index 0003.bcf
+
+bcftools merge -m id 0002.bcf 0003.bcf -O b > C3.isec.mus.mod.bcf
+
+##check that you have the correct number of variants and that none of that none of these are now multi-allelic
+##The following two files should have the same number of loci. The second file should have all the individuals (mod +mus)
+
+vcftools --bcf 0002.bcf
+vcftools --bcf C3.isec.mus.mod.bcf 
+
+vcftools --bcf C3.isec.mus.mod.bcf --max-alleles 2
+
+#### convert bcf to vcf
+
+bcftools view -O v C3.isec.mus.mod.bcf > C3.isec.mus.mod.vcf
+
+### filter for missingness
+
+vcftools --vcf C3.isec.mus.mod.vcf --missing-indv
+
+#This outputs out.imiss with missingness frequencies for all individuals. Use awk and sort to find all individuals with >50% missingness
+
+awk -F "\t" '{print $1"\t"$5}' out.imiss | sort -k 2
+
+##paste the names of these indivs into a file called indivs2remove
+##Then proceed with the filtering
+
+vcftools --vcf C3.isec.mus.mod.vcf --max-missing 0.8 --remove indivs2remove --recode --recode-INFO-all --out C3.isec.mus.mod.flt
+
+##create a poplist with indiv name, sampling location and sampling grid square number. Call this file C3.poplist.forpcadapt
+##Check that the order of this info is the same as for the filtered vcf file you'll use in pcadapt
+##You can get sample order with: 
+
+bcftools query -l C3.isec.mus.mod.vcf
+```
 Principle Component Analysis using PCAdapt in R.
 ```
 module load languages/R-3.5.1-ATLAS-gcc-6.1
