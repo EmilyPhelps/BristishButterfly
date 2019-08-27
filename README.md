@@ -207,7 +207,7 @@ vcftools --bcf C3.isec.exp.core.bcf --max-alleles 2
 
 bcftools view -O v C3.isec.exp.core.bcf > C3.isec.exp.core.vcf
 
-vcftools --vcf C3.isec.exp.core.vcf --max-missing 0.8 --recode --recode-INFO-all --out C3.isec.exp.core.flt
+vcftools --vcf C3.isec.exp.core.vcf --max-missing 0.8 --recode --recode-INFO-all --out C3.isec.exp.core.flt # This took 30 minutes with 7387746 possible sites...
 
 vcftools --vcf C3.isec.exp.core.flt.recode.vcf --missing-indv
 
