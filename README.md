@@ -67,7 +67,7 @@ q3 <- q2 + ggtitle(“Fstat in modern and museum populations, Triplet C“) + xl
 ### PCA
 Principle Component Analysis using PCAdapt in R.
 ```
-module load languages/R-3.5.1-ATLAS-gcc-6.1z
+module load languages/R-3.5.1-ATLAS-gcc-6.1
 
 R
 
