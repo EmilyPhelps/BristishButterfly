@@ -141,3 +141,26 @@ wc -l PC.3 #outliers associated with PC3
 ```
 
 ### Outliers expanding populations
+```
+module load apps/bcftools-1.8
+module load apps/vcftools-0.1.12b
+
+bcftools view 0001.vcf -O b > 0001.bcf
+bcftools view 0002.vcf -O b > 0002.bcf
+bcftools index 0001.bcf
+bcftools index 0002.bcf
+
+bcftools merge -m id 0001.bcf 0002.bcf -O b > C3.isec.exp.core.bcf
+
+vcftools --bcf 0001.bcf
+vcftools --bcf C3.isec.exp.core.bcf
+
+vcftools --bcf C3.isec.exp.core.bcf --max-alleles 2
+
+bcftools view -O v C3.isec.exp.core.bcf > C3.isec.exp.core.vcf
+
+vcftools --vcf C3.isec.exp.core.vcf --max-missing 0.8 --recode --recode-INFO-all --out C3.isec.exp.core.flt
+
+vcftools --vcf C3.isec.exp.core.flt --missing-indv
+
+vcftools --vcf C3.isec.exp.core.flt --remove indivs2remove --recode --recode-INFO-all --out C3.isec.exp.core.mis.
