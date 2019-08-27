@@ -122,7 +122,7 @@ C1.snp_pc <- get.pc(x.C1.maf0.05,outliers.C1)
 ```
 Write the x.C1.maf0.* to a file (including locus name/index, and associated statistics and p-values). Also record the outliers.C1 file as well as the number of outliers. 
 ```
-write.table(outliers.C1, "outliers.C1", col.names=F, row.names=F, quote=F) 
+write.table(C1.snp_pc, "outliers.C1", col.names=F, row.names=F, quote=F) 
 
 q()
 ```
