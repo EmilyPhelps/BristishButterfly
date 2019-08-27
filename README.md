@@ -209,6 +209,6 @@ bcftools view -O v C3.isec.exp.core.bcf > C3.isec.exp.core.vcf
 
 vcftools --vcf C3.isec.exp.core.vcf --max-missing 0.8 --recode --recode-INFO-all --out C3.isec.exp.core.flt
 
-vcftools --vcf C3.isec.exp.core.flt --missing-indv
+vcftools --vcf C3.isec.exp.core.flt.recode.vcf --missing-indv
 
-vcftools --vcf C3.isec.exp.core.flt --remove indivs2remove --recode --recode-INFO-all --out C3.isec.exp.core.mis.
+vcftools --vcf C3.isec.exp.core.flt.recode.vcf --remove indivs2remove --recode --recode-INFO-all --out C3.isec.exp.core.mis.
