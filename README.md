@@ -63,6 +63,41 @@ q2 <- q1 + theme_classic()
 q3 <- q2 + ggtitle(“Fstat in modern and museum populations, Triplet C“) + xlab(“Species”) + ylab(“f”)
 
 ```
+### Results
+
+Effect of different minimum mean depths on Heterozygosity.
+
+![alt txt][Mindepth]
+
+[Mindepth]:https://user-images.githubusercontent.com/52965134/63953785-e5658500-ca79-11e9-83f8-424a604d3e32.png
+
+Relationship between heterzygosity and minimum mean depth. Dark blue is Modern, light blue is Museum.
+
+![alt txt][MindepthxHet]
+
+[MindepthxHet]:https://user-images.githubusercontent.com/52965134/63953802-edbdc000-ca79-11e9-9775-56f36ee380f3.png
+
+#### Triplet C
+
+Heterzygosity at a minimum mean depth of 5. 
+
+![alt txt][C.Het.Boxplot]
+
+[C.Het.boxplot]:https://user-images.githubusercontent.com/52965134/63953915-278ec680-ca7a-11e9-8dd1-3decd6f07e6e.png
+
+
+Fst at a minimum mean depth of 5
+
+![alt txt][C1.Fst.Boxplot]
+
+[C.Fst.Boxplot]:https://user-images.githubusercontent.com/52965134/63953906-2362a900-ca7a-11e9-99f4-3e31549de364.png
+
+Output from Two way Anova and Tukey Post Hoc on the Fstat
+
+![alt txt][C.Fstat.Test]
+
+[C.Fstat.Test]:https://user-images.githubusercontent.com/52965134/63955374-82c1b880-ca7c-11e9-8cf5-2028e1a24a10.png
+
 ## PCA and Outliers
 ### PCA
 First filter, merge and convert the isec VCF file. 
