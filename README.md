@@ -83,12 +83,17 @@ Heterzygosity at a minimum mean depth of 5.
 
 ![alt txt][C.Het.Boxplot]
 
-[C.Het.boxplot]:https://user-images.githubusercontent.com/52965134/63953915-278ec680-ca7a-11e9-8dd1-3decd6f07e6e.png
+[C.Het.Boxplot]:https://user-images.githubusercontent.com/52965134/64269838-7fbe4080-cf32-11e9-8197-8356fa5d5160.pnghttps://user-images.githubusercontent.com/52965134/63953915-278ec680-ca7a-11e9-8dd1-3decd6f07e6e.png
 
+Output from Two way Anova and Tukey Post Hoc on the Het
+
+![alt txt][C.Het.Test]
+
+[C.Het.Test]:https://user-images.githubusercontent.com/52965134/63953948-34131f00-ca7a-11e9-8561-9b280f8ae77f.png
 
 Fst at a minimum mean depth of 5
 
-![alt txt][C1.Fst.Boxplot]
+![alt txt][C.Fst.Boxplot]
 
 [C.Fst.Boxplot]:https://user-images.githubusercontent.com/52965134/63953906-2362a900-ca7a-11e9-99f4-3e31549de364.png
 
@@ -97,6 +102,58 @@ Output from Two way Anova and Tukey Post Hoc on the Fstat
 ![alt txt][C.Fstat.Test]
 
 [C.Fstat.Test]:https://user-images.githubusercontent.com/52965134/63955374-82c1b880-ca7c-11e9-8cf5-2028e1a24a10.png
+
+#### Triplet D
+
+Heterzygosity at a minimum mean depth of 5. 
+
+![alt txt][D.Het.Boxplot]
+
+[D.Het.Boxplot]:
+
+Output from Two way Anova and Tukey Post Hoc on the Het
+
+![alt txt][D.Het.Test]
+
+[D.Het.Test]:
+
+Fst at a minimum mean depth of 5
+
+![alt txt][D.Fst.Boxplot]
+
+[D.Fst.Boxplot]:
+
+Output from Two way Anova and Tukey Post Hoc on the Fstat
+
+![alt txt][D.Fstat.Test]
+
+[D.Fstat.Test]:
+
+#### Triplet G
+
+Heterzygosity at a minimum mean depth of 5. 
+
+![alt txt][G.Het.Boxplot]
+
+[G.Het.Boxplot]:https://user-images.githubusercontent.com/52965134/63954054-63299080-ca7a-11e9-9615-5b2422711d66.png
+
+Output from Two way Anova and Tukey Post Hoc on the Het
+
+![alt txt][G.Het.Test]
+
+[G.Het.Test]:https://user-images.githubusercontent.com/52965134/63954117-7a687e00-ca7a-11e9-88f5-0515abf8925f.png
+
+Fst at a minimum mean depth of 5
+
+![alt txt][G.Fst.Boxplot]
+
+[G.Fst.Boxplot]:https://user-images.githubusercontent.com/52965134/63954073-6b81cb80-ca7a-11e9-9b18-7c69071d5965.png
+
+Output from Two way Anova and Tukey Post Hoc on the Fstat
+
+![alt txt][G.Fstat.Test]
+
+[G.Fstat.Test]:https://user-images.githubusercontent.com/52965134/63954095-74729d00-ca7a-11e9-8c46-dc81e1d12c16.png
 
 ## PCA and Outliers
 ### PCA
