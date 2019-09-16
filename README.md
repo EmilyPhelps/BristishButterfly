@@ -1,5 +1,5 @@
 # BristishButterfly
-************C1 HET AND FSTAT OUTPUT, TRIPLET D**********
+ TRIPLET D
 ## Heterogeneity and Inbreeding
 
 Set minimum mean depth to 5
