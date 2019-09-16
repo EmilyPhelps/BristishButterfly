@@ -48,6 +48,11 @@ vcftools --vcf Mod.mDP5.miss.recode.vcf --het --out Mod.mDP5
 ```
 
 Calculate the heterozygosity on a spreadsheet and include species and population. 
+
+```
+nano tripletC.het.fst
+```
+
 Put the following into R
 
 ```
@@ -56,6 +61,8 @@ module load languages/R-3.5.1-ATLAS-gcc-6.1
 ```
 R
 library(ggplot2) 
+
+C.data <- read.table("tripletC.het.fst", sep="\t", head=F)
 
 q <- ggplot(data, aes(x=species, y=f, color=population))
 q1 <-q + geom_boxplot(position = position_dodge(0.8))
