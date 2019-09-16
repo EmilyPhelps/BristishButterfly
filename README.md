@@ -96,7 +96,7 @@ Output from Two way Anova and Tukey Post Hoc on the Het
 
 ![alt txt][C.Het.Test]
 
-[C.Het.Test]:https://user-images.githubusercontent.com/52965134/63953948-34131f00-ca7a-11e9-8561-9b280f8ae77f.png
+[C.Het.Test]:https://user-images.githubusercontent.com/52965134/64949766-d5b7b000-d871-11e9-981e-92dc6d14f117.png
 
 Fst at a minimum mean depth of 5
 
