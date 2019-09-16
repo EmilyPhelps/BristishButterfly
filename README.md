@@ -69,6 +69,10 @@ q1 <-q + geom_boxplot(position = position_dodge(0.8))
 q2 <- q1 + theme_classic()
 q3 <- q2 + ggtitle(“Fstat in modern and museum populations, Triplet C“) + xlab(“Species”) + ylab(“f”)
 
+colnames(C.data) <- c("sample", "species", "pop", "f", "hom", "het")
+C.het.aov <-aov(het~species*pop, data=C.data)
+TukeyHSD(C.het.aov, ordered=F, conf.level=0.95)
+
 ```
 ### Results
 
