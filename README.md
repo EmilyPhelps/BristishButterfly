@@ -120,7 +120,7 @@ Heterzygosity at a minimum mean depth of 5.
 
 ![alt txt][D.Het.Boxplot]
 
-[D.Het.Boxplot]:
+[D.Het.Boxplot]:https://user-images.githubusercontent.com/52965134/65273281-b1313180-db18-11e9-84c9-c64574e50688.png
 
 Output from Two way Anova and Tukey Post Hoc on the Het
 
@@ -132,7 +132,7 @@ Fst at a minimum mean depth of 5
 
 ![alt txt][D.Fst.Boxplot]
 
-[D.Fst.Boxplot]:
+[D.Fst.Boxplot]:https://user-images.githubusercontent.com/52965134/65273056-30723580-db18-11e9-8f77-842748e1cc11.png
 
 Output from Two way Anova and Tukey Post Hoc on the Fstat
 
