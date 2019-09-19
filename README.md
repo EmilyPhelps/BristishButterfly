@@ -1,5 +1,4 @@
 # BristishButterfly
- TRIPLET D
 ## Heterogeneity and Inbreeding
 
 Set minimum mean depth to 5
@@ -94,7 +93,7 @@ Heterzygosity at a minimum mean depth of 5.
 
 ![alt txt][C.Het.Boxplot]
 
-[C.Het.Boxplot]:https://user-images.githubusercontent.com/52965134/64269838-7fbe4080-cf32-11e9-8197-8356fa5d5160.pnghttps://user-images.githubusercontent.com/52965134/63953915-278ec680-ca7a-11e9-8dd1-3decd6f07e6e.png
+[C.Het.Boxplot]:https://github.com/EmilyPhelps/BristishButterfly/files/3632830/tripletC.het.pdf
 
 Output from Two way Anova and Tukey Post Hoc on the Het
 
