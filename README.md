@@ -126,7 +126,7 @@ Output from Two way Anova and Tukey Post Hoc on the Het
 
 ![alt txt][D.Het.Test]
 
-[D.Het.Test]:
+[D.Het.Test]:https://user-images.githubusercontent.com/52965134/65272199-8e9e1900-db16-11e9-80ae-d74e43df251d.png
 
 Fst at a minimum mean depth of 5
 
@@ -138,7 +138,7 @@ Output from Two way Anova and Tukey Post Hoc on the Fstat
 
 ![alt txt][D.Fstat.Test]
 
-[D.Fstat.Test]:
+[D.Fstat.Test]:https://user-images.githubusercontent.com/52965134/65272114-6adad300-db16-11e9-8cec-0a6a01486fa9.png
 
 #### Triplet G
 
